@@ -3,6 +3,13 @@
 ## This repo is dedicated to the ethglobal online hackathon
 
 
+
+
+**Contract**
+1. *localfhenix (exposed)*:
+2. *Helium testnet*: 
+
+
 ## Quick start
 
 The first things you need to do are cloning this repository and installing its dependencies:

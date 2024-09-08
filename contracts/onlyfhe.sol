@@ -12,7 +12,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract OnlyFHE is ERC721Enumerable, Ownable, Permissioned {
 
     bool _paused;
-    string _basedURI;
+    string public _basedURI;
     uint256 public maxTokenIds = 10;
     mapping (uint256 => euint128) encryptKeys;
 
@@ -25,6 +25,11 @@ contract OnlyFHE is ERC721Enumerable, Ownable, Permissioned {
         require(tokenIds < maxTokenIds, "Exceed maximum supply");
         tokenIds += 1;
         _safeMint(msg.sender, tokenIds);
+    }
+
+    function setEncryptKey(inEuint128 memory encryptKey, uint256 tokenId) external onlyOwner {
+        euint128 ek = FHE.asEuint128(encryptKey);
+        encryptKeys[tokenId] = ek;
     }
 
     function getUnsealDecryptKey(Permission memory permission, uint256 tokenId) public view 

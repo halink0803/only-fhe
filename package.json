@@ -41,6 +41,7 @@
     "axios": "^1.6.7",
     "chai": "^4.3.7",
     "chalk": "^4.1.2",
+    "crypto-js": "^4.2.0",
     "dotenv": "^16.4.5",
     "ethers": "^6.11.1",
     "fhenix-hardhat-docker": "0.2.2",

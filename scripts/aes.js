@@ -1,13 +1,14 @@
-const fs = require('fs')
+const fs = require('fs');
+const CryptoJS = require('crypto-js');
 
 // Path to the JPEG file
-// const imagePath = "/yourimage.jpg";
+const imagePath = "../collection/images/2.jpg";
 
 // Read the JPEG file as a base64 string
-// const imageData = fs.readFileSync(imagePath, { encoding: "base64" });
+const imageData = fs.readFileSync(imagePath, { encoding: "base64" });
 
 // Generate a random 128-bit AES key (you should use a secure method for key generation)
-const key = CryptoJS.lib.WordArray.random(16);
+const key = CryptoJS.lib.WordArray.random(4);
 console.log(key);
 
 // Encrypt the image data
